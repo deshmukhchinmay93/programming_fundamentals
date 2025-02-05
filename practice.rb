@@ -27,3 +27,30 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
+balances = {"ben" => 0, "brian" => 0, "evan"=> 0, "anthony"=> 0}
+i = 0;
+
+while i < blockchain.length do
+from = blockchain[i]["from_user"]
+to = blockchain[i]["to_user"]
+amount = blockchain[i]["amount"]
+
+if from == nil 
+  (
+balances[to] = balances [to] + amount;
+  )
+else
+  (
+balances[to] = balances[to] + amount;
+balances[from] = balances[from] - amount;
+  )
+end
+  i = i + 1
+end
+
+message = "Ben's KelloggCoin balance is $#{balances["ben"]}
+Brian's KelloggCoin balance is $#{balances["brian"]}
+Evan's KelloggCoin balance is $#{balances["evan"]}
+Anthony's KelloggCoin balance is $#{balances["anthony"]}"
+
+puts message
